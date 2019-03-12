@@ -34,8 +34,9 @@ public class Stopwatch {
         Scanner input = new Scanner(System.in);
         int size = input.nextInt();
         System.out.println();
-        System.out.println("Please standby while I bubble sort " + size
+        System.out.println("Please standby while I sort " + size
                 + " numbers and then tell you how long that took.");
+        System.out.println("I am using selection sort from page 272.");
 
         System.out.println();
         double[] list = new double[size];
@@ -43,6 +44,7 @@ public class Stopwatch {
             list[i] = Math.random() * list.length;
         }
 
+        // new constructor for Watch class
         Watch Watch = new Watch();
         selectionSort(list);
         Watch.stop();
@@ -51,10 +53,16 @@ public class Stopwatch {
                 + " milliseconds.");
     }
 
-    // Sort number method
+    /**
+     * Selection sort method from page 272 text Repeatedly selects the smallest
+     * number and swaps it with the first number in the list
+     */
     public static void selectionSort(double[] list) {
         for (int i = 0; i < list.length - 1; i++) {
-            // Find the minimum in the list[i..list.length-1]
+            /**
+             * Find the minimum in the list ['element i' to 'element
+             * list.length-1']
+             */
             double currentMin = list[i];
             int currentMinIndex = i;
 
@@ -65,7 +73,7 @@ public class Stopwatch {
                 }
             }
 
-            // Swap list[i] with list[currentMinIndex] if needed;
+            // Swap list [i] with list [currentMinIndex] if necessary
             if (currentMinIndex != i) {
                 list[currentMinIndex] = list[i];
                 list[i] = currentMin;

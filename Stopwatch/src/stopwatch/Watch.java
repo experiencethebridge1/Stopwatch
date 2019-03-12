@@ -10,11 +10,10 @@ public class Watch {
     private long startTime = System.currentTimeMillis();
     private long endTime = startTime;
 
-    public Watch() {
-    }
-
-    // A no-arg constructor that initializes startTime and stopTime with the
-    // current time.
+    /**
+     * A no-arg constructor that initializes startTime and stopTime with the
+     * current time.
+     */
     public void start() {
         startTime = System.currentTimeMillis();
     }
@@ -24,8 +23,10 @@ public class Watch {
         endTime = System.currentTimeMillis();
     }
 
-    // A method named getElapsedtime() that returns the elapsed time for the
-    // stopwatch in milliseconds
+    /**
+     * A method named getElapsedtime() that returns the elapsed time for the
+     * stopwatch in milliseconds
+     */
     public long getElapsedTime() {
         return endTime - startTime;
     }
